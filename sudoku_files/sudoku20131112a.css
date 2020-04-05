@@ -1,0 +1,141 @@
+table.sudokutable {border-collapse: collapse; border: 4px #000000 solid; padding:0;}
+input.n {border: 0; padding: 0; margin: 0; text-align:center; background-color: transparent; font-size: 28px; width:42px; color: #000000;}
+input.s {border: 0; padding: 0; margin: 0; text-align:center; background-color: transparent; font-size: 11px; width:42px; color: #000000;}
+input.ncomp {border: 0; padding: 0; margin: 0; text-align:center; font-size: 28px; width:42px; color: #000000; background-color:#99FF99;}
+td.n {border: 0; padding: 0; margin: 0; text-align:center; background-color: transparent;}
+td.s {border: 1px #000000 solid; padding:0; margin: 0;}
+td.stop {border-top: 3px #000000 solid; border-right: 1px #000000 solid; border-bottom: 1px #000000 solid; border-left: 1px #000000 solid; padding:0; margin: 0;}
+td.sright {border-top: 1px #000000 solid; border-right: 3px #000000 solid; border-bottom: 1px #000000 solid; border-left: 1px #000000 solid; padding:0; margin: 0;}
+td.stopright {border-top: 3px #000000 solid; border-right: 3px #000000 solid; border-bottom: 1px #000000 solid; border-left: 1px #000000 solid; padding:0; margin: 0;}
+
+td.nobo {border: 1px #000000 solid; padding:0; margin: 0;}
+td.nobotop {border-top: 3px #000000 solid; border-right: 1px #000000 solid; border-bottom: 1px #000000 solid; border-left: 1px #000000 solid; padding:0; margin: 0;}
+td.noboright {border-top: 1px #000000 solid; border-right: 3px #000000 solid; border-bottom: 1px #000000 solid; border-left: 1px #000000 solid; padding:0; margin: 0;}
+td.noboright {border-top: 3px #000000 solid; border-right: 3px #000000 solid; border-bottom: 1px #000000 solid; border-left: 1px #000000 solid; padding:0; margin: 0;}
+
+table.tentstable {border-collapse: collapse; border: 0px #003399 solid; padding:0;}
+td.ntent {border: 1px #000000 solid; padding: 0; margin: 0; width:30px; height:30px; background-color: #ffffff;}
+td.nnumber {border: 0px #000000 solid; padding: 0; margin: 0; width:30px; height:30px; background-color: #ffffff; color: #003399; font-weight: bold; text-align: center}
+
+table.nurikabetable {border-collapse: collapse; border: 2px #000000 solid; padding:0;}
+td.ngrey {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #aaaaaa;}
+td.nwhite {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #ffffff; text-align:center; font-size: 28px; color: #ff0000;}
+td.nfixedwhite {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:40px; height:40px; background-color: #ffffff; font-size: 28px; color: #003399;}
+td.nblack {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #003399; text-align:center; font-size: 28px; color: #ff0000;}
+td.nfixedblack {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #003399; text-align:center; font-size: 28px; color: #ff0000;}
+td.ngreen {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #99FF99; text-align:center; font-size: 28px; color: #003399;}
+td.nred {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #ff0000; text-align:center; font-size: 28px; color: #003399;}
+
+td.slantwhite {border: 0px #000000 solid; padding: 0; margin: 0; width:27px; height:27px; background-color: #ffffff; text-align:center; font-size: 28px; color: #ff0000;}
+td.slantgreen {border: 0px #000000 solid; padding: 0; margin: 0; width:27px; height:27px; background-color: #99FF99; text-align:center; font-size: 28px; color: #003399;}
+td.slantred {border: 0px #000000 solid; padding: 0; margin: 0; width:27px; height:27px; background-color: #ff0000; text-align:center; font-size: 28px; color: #003399;}
+
+table.rangetable {border-collapse: collapse; border: 2px #000000 solid; padding:0;}
+td.rangegrey {border: 1px #000000 solid; padding: 0; margin: 0; width:35px; height:35px; background-color: #aaaaaa; font-weight: bold;}
+td.rangewhite {border: 1px #000000 solid; padding: 0; margin: 0; width:35px; height:35px; background-color: #ffffff; text-align:center; font-size: 16px; color: #ff0000; font-weight: bold;}
+td.rangefixedwhite {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:35px; height:35px; background-color: #ffffff; font-weight: bold; font-size: 16px; color: #000000;}
+td.rangefixedwhite2 {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:35px; height:35px; background-color: #ffffff; font-weight: bold; font-size: 16px; color: #999999;}
+td.rangeblack {border: 1px #000000 solid; padding: 0; margin: 0; width:35px; height:35px; background-color: #000000; text-align:center; font-size: 16px; color: #ff0000; font-weight: bold;}
+td.rangegreen {border: 1px #000000 solid; padding: 0; margin: 0; width:35px; height:35px; background-color: #99FF99; text-align:center; font-size: 16px; color: #000000; font-weight: bold;}
+
+.hitoritable {border-collapse: collapse; border: 2px #000000 solid; padding:0; margin: 0;}
+.hitgrey {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #cccccc; cursor: default;}
+.hitwhite {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #ffffff; cursor: default;}
+.hitblack {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #000000; color: #bbbbbb; cursor: default;}
+
+.kakurasutable {border-collapse: collapse; border: 0px #000000 solid; padding:0; margin: 0;}
+.kakurasugrey {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #cccccc; cursor: default;}
+.kakurasuwhite {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #ffffff; cursor: default; font-size: 16px;}
+.kakurasuwhiteerror {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; color: #ff0000; background-color: #ffffff; cursor: default;  font-size: 24px;}
+.kakurasublack {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #003399; cursor: default;}
+.kakurasublackerror {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #ff0000; cursor: default;}
+.kakurasugreen {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #006600; cursor: default;}
+.kakurasuclueR {border: 0px; padding: 0; margin: 0; text-align:center; height:45px; color: #000000; background-color: #ffffff; font-size: 24px;}
+.kakurasuclueB {border: 0px; padding: 0; margin: 0; text-align:center; width:45px; color: #000000; background-color: #ffffff; font-size: 24px;}
+.kakurasunumber {border: 0px; padding: 0; margin: 0; text-align:center; width:45px; height:45px; color: #888888; background-color: #ffffff; font-size: 24px;}
+.kakurasutotal {border: 0px; padding: 0; margin: 0; text-align:center; width:45px; height:45px; color: #888888; background-color: #ffffff; font-size: 16px;}
+
+.bshipstable {border-collapse: collapse; border: 0px #000000 solid; padding:0; margin: 0;}
+.bshipsB {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #003366; cursor: default;}
+.bshipsR {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #ff0000; cursor: default;}
+.bshipsG {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #339933; cursor: default;}
+.bshipsP {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:45px; height:45px; background-color: #ffffff; cursor: default;}
+
+table.nettableWRAP {border-collapse: collapse; border: 0 #000000 solid; padding: 0; margin: 0;}
+table.nettableNOWRAP {border-collapse: collapse; border: 3px #ff0000 solid; padding: 0; margin: 0;}
+td.nnetwhite {border: 2px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #ffffff;}
+td.nnetgrey {border: 2px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #bbbbbb;}
+td.nnetgreen {border: 2px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #99FF66;}
+td.nnetred {border: 2px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #FF0000;}
+
+table.lightuptable {border-collapse: collapse; border: 2px #000000 solid; padding: 0; margin: 0;}
+td.lightup {border-collapse: collapse; border: 1px #000000 solid; padding: 0; margin: 0; width:25px; height:25px; background-color: #ffffff;}
+
+table.netslide {border-collapse: collapse; border: 0px; padding: 0; margin: 0;}
+td.nnetslide {padding: 0; margin: 0; width:40px; height:40px; background-color: #ffffff;}
+
+.NonoTable{border:2px solid #000; border-collapse: collapse;}
+.t00{border:1px solid #000; font-size: 10px; font-weight:bold;}
+.t10{border:1px solid #000;	border-top: 2px solid #000; font-size: 10px; font-weight:bold;}
+.t01{border:1px solid #000;	border-left: 2px solid #000; font-size: 10px; font-weight:bold;}
+.t11{border:1px solid #000; border-top: 2px solid #000; border-left: 2px solid #000; font-size: 10px; font-weight:bold;}
+
+.BridgesTable {border:0px solid #000; padding: 0px; margin: 0px; border-collapse: collapse;}
+.btable {border:0px solid #000; padding: 10px; background-color: #ffffff;}
+.bridgetd {padding: 0; margin: 0;}
+
+.SlitherlinkTable {border:0px solid #000; padding: 0px; margin: 0px; border-collapse: collapse;}
+.plooptext {font-size: 10pt; font-weight: bold; text-align: center;}
+.ploopTD {padding: 0; margin: 0; border: 0;}
+.ploopimg {padding: 0; margin: 0; border: 0;}
+
+table.fillingtable {border-collapse: collapse; border: 2px #000000 solid; padding:0; margin: 0;}
+td.filling {border: 1px #000000 solid; padding: 0; margin: 0; width:32px; height:32px; font-weight:bold; text-align:center; font-size: 16px; color: #666666; cursor: default;}
+td.fillingfixed {border: 1px #000000 solid; padding: 0; margin: 0; width:32px; height:32px; font-weight:bold; text-align:center; font-size: 16px; cursor: default;}
+td.number {border: 1px #000000 solid; padding: 0; margin: 0; width:32px; height:32px; font-weight:bold; text-align:center; font-size: 16px; cursor: default;}
+
+table.unequaltable {border: 0px #000000 solid; padding:0;}
+input.unequalq {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px; color: #003399;}
+input.unequaln {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px;}
+input.unequals {border: 0; padding: 0; margin: 0; text-align:center; font-size: 10px; width:50px; color: #000000;}
+input.unequalgreen {border: 0; padding: 0; margin: 0; text-align:center; font-size: 10px; width:50px; background-color:#FFFF66;}
+input.unequalerror {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px; color: #ff0000;}
+input.unequalerrors {border: 0; padding: 0; margin: 0; text-align:center; font-size: 10px; width:50px; color: #ff0000;}
+input.unequalcorrect {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px; background-color:#99FF99;}
+td.unequaltd {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; vertical-align: middle; font-size: 30px; width:50px; height:50px;}
+.unequalclues{color:#000;font-weight:bold;text-align:center;font-size:18px;}
+
+table.ABCtable {border: 0px #000000 solid; padding:0;}
+input.ABCq {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px; color: #003399; text-transform: uppercase;}
+input.ABCn {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px; text-transform: uppercase;}
+input.ABCs {border: 0; padding: 0; margin: 0; text-align:center; font-size: 14px; width:50px; color: #000000; text-transform: uppercase;}
+input.ABCgreen {border: 0; padding: 0; margin: 0; text-align:center; font-size: 10px; width:50px; background-color:#FFFF66; text-transform: uppercase;}
+input.ABCerror {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px; color: #ff0000; text-transform: uppercase;}
+input.ABCerrors {border: 0; padding: 0; margin: 0; text-align:center; font-size: 10px; width:50px; color: #ff0000; text-transform: uppercase;}
+input.ABCcorrect {border: 0; padding: 0; margin: 0; text-align:center; font-size: 30px; width:50px; background-color:#99FF99; text-transform: uppercase;}
+td.ABCtd {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; vertical-align: middle; font-size: 30px; width:50px; height:50px;}
+.ABCclues{color:#000;font-weight:bold;text-align:center;font-size:18px;}
+
+td.maths {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:50px; height:50px; color: #000000; background-color: #ffffff; font-size: 12px;}
+td.mathsG {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:50px; height:50px; color: #000000; background-color: #99FF99; font-size: 12px;}
+input.maths {border: 0px; padding: 6px 0px 6px 0px; margin: 0; text-align:center; width:45px; height:45px; color: #000000; background-color: #ffffff; font-size: 28px;}
+input.mathserror {border: 0px; padding: 6px 0px 6px 0px; margin: 0; text-align:center; width:45px; height:45px; color: #ff0000; background-color: #ffffff; font-size: 28px;}
+input.mathscorrect {border: 0px; padding: 6px 0px 6px 0px; margin: 0; text-align:center; width:45px; height:45px; color: #99ff99; background-color: #ffffff; font-size: 28px;}
+input.mathsS {border: 0px; padding: 6px 0px 6px 0px; margin: 0; text-align:center; width:45px; height:45px; color: #000000; background-color: #ffffff; font-size: 14px;}
+input.mathsG {border: 0px; padding: 6px 0px 6px 0px; margin: 0; text-align:center; width:45px; height:45px; color: #000000; background-color: #99FF99; font-size: 28px;}
+table.maths {border-collapse: collapse; margin: 0; border: 4px #000000 solid; padding:0;}
+
+table.inarowtable {border-collapse: collapse; border: 0px #000000 solid; padding:0;}
+.inarowclue {border: 0px; padding: 0; margin: 0; text-align:center; width:40px; height:40px; color: #888888; background-color: #ffffff; font-size: 16px;}
+td.inarowgrey {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #aaaaaa;}
+td.inarowgreyprint {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #ffffff;}
+td.inarowwhite {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #ffffff; text-align:center; font-size: 28px; color: #ff0000;}
+td.inarowfixedwhite {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:40px; height:40px; background-color: #ffffff; font-size: 28px; color: #003399;}
+td.inarowfixedwhiteprint {border: 1px #000000 solid; padding: 0; margin: 0; text-align:center; width:40px; height:40px; background-color: #ffffff; font-size: 28px; color: #000000;}
+td.inarowblack {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #003399; text-align:center; font-size: 28px; color: #ff0000;}
+td.inarowfixedblack {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #003399; text-align:center; font-size: 28px; color: #ff0000;}
+td.inarowfixedblackprint {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #ffffff; text-align:center; font-size: 28px; color: #000000;}
+td.inarowgreen {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #99FF99; text-align:center; font-size: 28px; color: #003399;}
+td.inarowred {border: 1px #000000 solid; padding: 0; margin: 0; width:40px; height:40px; background-color: #ff0000; text-align:center; font-size: 28px; color: #003399;}
+
+
