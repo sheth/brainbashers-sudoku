@@ -2,583 +2,911 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel="stylesheet" href="./sudoku_files/global20130909a.css" type="text/css">
-    <link rel="SHORTCUT ICON" href="http://megathinker.com/favicon.ico" />
-    <link rel="shortcut icon" href="http://megathinker.com/favicon.ico?v=2" />
-    <script language="javascript" src="./sudoku_files/miscfunctions20130107a.js" type="text/javascript"></script><style type="text/css"></style>
+    <script src="./sudoku_files/miscfunctions20130107a.js" type="text/javascript"></script>
+    <style type="text/css"></style>
     <title>BrainBashers : Daily Sudoku</title>
-    <meta name="description" content="Complete the grid such that every row, every column, and every 3x3 block contains the digits from 1 to 9.">
-    <meta name="keywords" content="sudoku,sudoku help,daily sudoku,solve,tips,strategy,number place,su doku,free,puzzle,online">
+    <meta name="description"
+          content="Complete the grid such that every row, every column, and every 3x3 block contains the digits from 1 to 9.">
+    <meta name="keywords"
+          content="sudoku,sudoku help,daily sudoku,solve,tips,strategy,number place,su doku,free,puzzle,online">
     <meta name="robots" content="ALL">
     <meta name="revisit-after" content="8 days">
 </head>
 <body onload="loaded();" bgcolor="#ffffff">
 <table border="0" cellspacing="0" cellpadding="0" align="center" width="950">
-<tbody>
-<tr><td>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tbody><tr><td colspan="2"><img src="./sudoku_files/sp.gif" width="1" height="25" alt="Spacer"></td></tr>
-        <tr><td colspan="2"><img src="./sudoku_files/line2.gif" width="100%" height="8" alt="Line"></td></tr>
-        <tr valign="top"><td>
-            <div class="navig">
-            </div></td>
-            <td><div class="navigr"><a href="http://www.brainbashers.com/support.asp" class="navig" title="Support BrainBashers">Support BrainBashers</a>&nbsp;|&nbsp;<a href="http://www.brainbashers.com/search.asp" class="navig">Search</a>&nbsp;|&nbsp;<a href="http://www.brainbashers.com/random.asp" class="navig">Random</a>&nbsp;|&nbsp;<a href="http://www.brainbashers.com/new.asp" class="navig">New</a>&nbsp;|&nbsp;<a href="http://www.brainbashers.com/today.asp" class="navig">Today</a>
-                &nbsp;|&nbsp;<a href="http://www.brainbashers.com/userlogin.asp" class="navig">Log In</a>
-            </div></td></tr>
-        <tr><td colspan="2"><img src="./sudoku_files/line2.gif" width="100%" height="8" alt="Line"></td></tr>
-        </tbody></table>
-</td></tr>
-<tr><td>
-
-
-<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr valign="top"><td>
-
-<link rel="stylesheet" href="./sudoku_files/sudoku20131112a.css" type="text/css">
-<span class="b2heading">BrainBashers Daily Sudoku<br><img src="./sudoku_files/line2.gif" width="350" height="8" alt=""></span><p></p>
-<p>Solve a random <a href="http://www.brainbashers.com/randomjapanese.asp?diff=1">Easy</a>, <a href="http://www.brainbashers.com/randomjapanese.asp?diff=2">Medium</a>, <a href="http://www.brainbashers.com/randomjapanese.asp?diff=3">Hard</a> Japanese logic puzzle chosen from today's collection.<br><span class="ssb">Note: If the puzzle doesn't look as it should try using 'Compatibility Mode'.</span></p>
-<script language="javascript" type="text/javascript">
-    <!--
-    lcshowerrorwarningshown = "N";
-
-    // warn them about pressing backspace?
-    window.onbeforeunload = function ()
-    {
-        lowarnpage = getObject('warnpage')
-
-        if (lowarnpage.checked == true)
-        {
-            return "";
-        }
-    }
-    -->
-</script>
-<script language="javascript" src="./sudoku_files/showsudokuwithcomments.js" type="text/javascript"></script>
-<script language="javascript" src="./sudoku_files/helper.js" type="text/javascript"></script>
-<form>
-<table width="100%" cellpadding="5" cellspacing="0" border="0">
-<tbody>
-<tr>
-    <td colspan=2 style="text-align: center;vertical-align: middle">
-        <input size="81" type="text" id="cqbb" value=".8.4.2.3.1...9...7...713...4.8...7.3.75...29.6.9...4.8...276...2...8...5.6.1.5.7.">
-        <a href="" onclick="lcq=document.getElementById('cqbb').value;loadboard(lcq, '.');loaded();return false;" class="ignore"><img src="./sudoku_files/import.gif" border="0" class="ph2" alt="Load From Input"></a>
-    </td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-<td width="5"><img src="./sudoku_files/sp.gif" width="5" height="1" alt="?"></td>
-<!-- sudoku board -->
-<td valign="top" width="500">
-
-<input type="hidden" id="ca" value="answer">
-
-<table class="sudokutable" border="1" cellpadding="0" cellspacing="0" name="sudoku" align="center">
-
-<tbody><tr>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td11">
-        <p class="c"><input class="n" maxlength="9" value="" id="input11" onkeyup="keypressed(event , 1 , 1 , false)" onblur="lostfocus(1 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td12">
-        <p class="c"><input class="n" maxlength="9" value="" id="input12" onkeyup="keypressed(event , 1 , 2 , false)" onblur="lostfocus(1 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td13">
-        <p class="c"><input class="n" maxlength="9" value="" id="input13" onkeyup="keypressed(event , 1 , 3 , false)" onblur="lostfocus(1 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td14">
-        <p class="c"><input class="n" maxlength="9" value="" id="input14" onkeyup="keypressed(event , 1 , 4 , false)" onblur="lostfocus(1 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td15">
-        <p class="c"><input class="n" maxlength="9" value="" id="input15" onkeyup="keypressed(event , 1 , 5 , false)" onblur="lostfocus(1 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td16">
-        <p class="c"><input class="n" maxlength="9" value="" id="input16" onkeyup="keypressed(event , 1 , 6 , false)" onblur="lostfocus(1 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td17">
-        <p class="c"><input class="n" maxlength="9" value="" id="input17" onkeyup="keypressed(event , 1 , 7 , false)" onblur="lostfocus(1 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td18">
-        <p class="c"><input class="n" maxlength="9" value="" id="input18" onkeyup="keypressed(event , 1 , 8 , false)" onblur="lostfocus(1 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td19">
-        <p class="c"><input class="n" maxlength="9" value="" id="input19" onkeyup="keypressed(event , 1 , 9 , false)" onblur="lostfocus(1 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td21">
-        <p class="c"><input class="n" maxlength="9" value="" id="input21" onkeyup="keypressed(event , 2 , 1 , false)" onblur="lostfocus(2 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td22">
-        <p class="c"><input class="n" maxlength="9" value="" id="input22" onkeyup="keypressed(event , 2 , 2 , false)" onblur="lostfocus(2 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td23">
-        <p class="c"><input class="n" maxlength="9" value="" id="input23" onkeyup="keypressed(event , 2 , 3 , false)" onblur="lostfocus(2 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td24">
-        <p class="c"><input class="n" maxlength="9" value="" id="input24" onkeyup="keypressed(event , 2 , 4 , false)" onblur="lostfocus(2 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td25">
-        <p class="c"><input class="n" maxlength="9" value="" id="input25" onkeyup="keypressed(event , 2 , 5 , false)" onblur="lostfocus(2 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td26">
-        <p class="c"><input class="n" maxlength="9" value="" id="input26" onkeyup="keypressed(event , 2 , 6 , false)" onblur="lostfocus(2 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td27">
-        <p class="c"><input class="n" maxlength="9" value="" id="input27" onkeyup="keypressed(event , 2 , 7 , false)" onblur="lostfocus(2 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td28">
-        <p class="c"><input class="n" maxlength="9" value="" id="input28" onkeyup="keypressed(event , 2 , 8 , false)" onblur="lostfocus(2 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td29">
-        <p class="c"><input class="n" maxlength="9" value="" id="input29" onkeyup="keypressed(event , 2 , 9 , false)" onblur="lostfocus(2 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td31">
-        <p class="c"><input class="n" maxlength="9" value="" id="input31" onkeyup="keypressed(event , 3 , 1 , false)" onblur="lostfocus(3 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td32">
-        <p class="c"><input class="n" maxlength="9" value="" id="input32" onkeyup="keypressed(event , 3 , 2 , false)" onblur="lostfocus(3 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td33">
-        <p class="c"><input class="n" maxlength="9" value="" id="input33" onkeyup="keypressed(event , 3 , 3 , false)" onblur="lostfocus(3 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td34">
-        <p class="c"><input class="n" maxlength="9" value="" id="input34" onkeyup="keypressed(event , 3 , 4 , false)" onblur="lostfocus(3 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td35">
-        <p class="c"><input class="n" maxlength="9" value="" id="input35" onkeyup="keypressed(event , 3 , 5 , false)" onblur="lostfocus(3 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td36">
-        <p class="c"><input class="n" maxlength="9" value="" id="input36" onkeyup="keypressed(event , 3 , 6 , false)" onblur="lostfocus(3 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td37">
-        <p class="c"><input class="n" maxlength="9" value="" id="input37" onkeyup="keypressed(event , 3 , 7 , false)" onblur="lostfocus(3 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td38">
-        <p class="c"><input class="n" maxlength="9" value="" id="input38" onkeyup="keypressed(event , 3 , 8 , false)" onblur="lostfocus(3 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td39">
-        <p class="c"><input class="n" maxlength="9" value="" id="input39" onkeyup="keypressed(event , 3 , 9 , false)" onblur="lostfocus(3 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td41">
-        <p class="c"><input class="n" maxlength="9" value="" id="input41" onkeyup="keypressed(event , 4 , 1 , false)" onblur="lostfocus(4 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td42">
-        <p class="c"><input class="n" maxlength="9" value="" id="input42" onkeyup="keypressed(event , 4 , 2 , false)" onblur="lostfocus(4 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="stopright" style="background-color: rgb(255, 255, 255);" id="td43">
-        <p class="c"><input class="n" maxlength="9" value="" id="input43" onkeyup="keypressed(event , 4 , 3 , false)" onblur="lostfocus(4 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td44">
-        <p class="c"><input class="n" maxlength="9" value="" id="input44" onkeyup="keypressed(event , 4 , 4 , false)" onblur="lostfocus(4 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td45">
-        <p class="c"><input class="n" maxlength="9" value="" id="input45" onkeyup="keypressed(event , 4 , 5 , false)" onblur="lostfocus(4 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="stopright" style="background-color: rgb(255, 255, 255);" id="td46">
-        <p class="c"><input class="n" maxlength="9" value="" id="input46" onkeyup="keypressed(event , 4 , 6 , false)" onblur="lostfocus(4 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td47">
-        <p class="c"><input class="n" maxlength="9" value="" id="input47" onkeyup="keypressed(event , 4 , 7 , false)" onblur="lostfocus(4 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td48">
-        <p class="c"><input class="n" maxlength="9" value="" id="input48" onkeyup="keypressed(event , 4 , 8 , false)" onblur="lostfocus(4 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td49">
-        <p class="c"><input class="n" maxlength="9" value="" id="input49" onkeyup="keypressed(event , 4 , 9 , false)" onblur="lostfocus(4 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td51">
-        <p class="c"><input class="n" maxlength="9" value="" id="input51" onkeyup="keypressed(event , 5 , 1 , false)" onblur="lostfocus(5 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td52">
-        <p class="c"><input class="n" maxlength="9" value="" id="input52" onkeyup="keypressed(event , 5 , 2 , false)" onblur="lostfocus(5 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td53">
-        <p class="c"><input class="n" maxlength="9" value="" id="input53" onkeyup="keypressed(event , 5 , 3 , false)" onblur="lostfocus(5 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td54">
-        <p class="c"><input class="n" maxlength="9" value="" id="input54" onkeyup="keypressed(event , 5 , 4 , false)" onblur="lostfocus(5 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td55">
-        <p class="c"><input class="n" maxlength="9" value="" id="input55" onkeyup="keypressed(event , 5 , 5 , false)" onblur="lostfocus(5 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td56">
-        <p class="c"><input class="n" maxlength="9" value="" id="input56" onkeyup="keypressed(event , 5 , 6 , false)" onblur="lostfocus(5 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td57">
-        <p class="c"><input class="n" maxlength="9" value="" id="input57" onkeyup="keypressed(event , 5 , 7 , false)" onblur="lostfocus(5 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td58">
-        <p class="c"><input class="n" maxlength="9" value="" id="input58" onkeyup="keypressed(event , 5 , 8 , false)" onblur="lostfocus(5 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td59">
-        <p class="c"><input class="n" maxlength="9" value="" id="input59" onkeyup="keypressed(event , 5 , 9 , false)" onblur="lostfocus(5 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td61">
-        <p class="c"><input class="n" maxlength="9" value="" id="input61" onkeyup="keypressed(event , 6 , 1 , false)" onblur="lostfocus(6 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td62">
-        <p class="c"><input class="n" maxlength="9" value="" id="input62" onkeyup="keypressed(event , 6 , 2 , false)" onblur="lostfocus(6 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td63">
-        <p class="c"><input class="n" maxlength="9" value="" id="input63" onkeyup="keypressed(event , 6 , 3 , false)" onblur="lostfocus(6 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td64">
-        <p class="c"><input class="n" maxlength="9" value="" id="input64" onkeyup="keypressed(event , 6 , 4 , false)" onblur="lostfocus(6 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td65">
-        <p class="c"><input class="n" maxlength="9" value="" id="input65" onkeyup="keypressed(event , 6 , 5 , false)" onblur="lostfocus(6 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td66">
-        <p class="c"><input class="n" maxlength="9" value="" id="input66" onkeyup="keypressed(event , 6 , 6 , false)" onblur="lostfocus(6 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td67">
-        <p class="c"><input class="n" maxlength="9" value="" id="input67" onkeyup="keypressed(event , 6 , 7 , false)" onblur="lostfocus(6 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td68">
-        <p class="c"><input class="n" maxlength="9" value="" id="input68" onkeyup="keypressed(event , 6 , 8 , false)" onblur="lostfocus(6 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td69">
-        <p class="c"><input class="n" maxlength="9" value="" id="input69" onkeyup="keypressed(event , 6 , 9 , false)" onblur="lostfocus(6 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td71">
-        <p class="c"><input class="n" maxlength="9" value="" id="input71" onkeyup="keypressed(event , 7 , 1 , false)" onblur="lostfocus(7 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td72">
-        <p class="c"><input class="n" maxlength="9" value="" id="input72" onkeyup="keypressed(event , 7 , 2 , false)" onblur="lostfocus(7 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="stopright" style="background-color: rgb(255, 255, 255);" id="td73">
-        <p class="c"><input class="n" maxlength="9" value="" id="input73" onkeyup="keypressed(event , 7 , 3 , false)" onblur="lostfocus(7 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td74">
-        <p class="c"><input class="n" maxlength="9" value="" id="input74" onkeyup="keypressed(event , 7 , 4 , false)" onblur="lostfocus(7 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td75">
-        <p class="c"><input class="n" maxlength="9" value="" id="input75" onkeyup="keypressed(event , 7 , 5 , false)" onblur="lostfocus(7 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="stopright" style="background-color: rgb(255, 255, 255);" id="td76">
-        <p class="c"><input class="n" maxlength="9" value="" id="input76" onkeyup="keypressed(event , 7 , 6 , false)" onblur="lostfocus(7 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td77">
-        <p class="c"><input class="n" maxlength="9" value="" id="input77" onkeyup="keypressed(event , 7 , 7 , false)" onblur="lostfocus(7 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td78">
-        <p class="c"><input class="n" maxlength="9" value="" id="input78" onkeyup="keypressed(event , 7 , 8 , false)" onblur="lostfocus(7 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="stop" style="background-color: rgb(255, 255, 255);" id="td79">
-        <p class="c"><input class="n" maxlength="9" value="" id="input79" onkeyup="keypressed(event , 7 , 9 , false)" onblur="lostfocus(7 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td81">
-        <p class="c"><input class="n" maxlength="9" value="" id="input81" onkeyup="keypressed(event , 8 , 1 , false)" onblur="lostfocus(8 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td82">
-        <p class="c"><input class="n" maxlength="9" value="" id="input82" onkeyup="keypressed(event , 8 , 2 , false)" onblur="lostfocus(8 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td83">
-        <p class="c"><input class="n" maxlength="9" value="" id="input83" onkeyup="keypressed(event , 8 , 3 , false)" onblur="lostfocus(8 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td84">
-        <p class="c"><input class="n" maxlength="9" value="" id="input84" onkeyup="keypressed(event , 8 , 4 , false)" onblur="lostfocus(8 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td85">
-        <p class="c"><input class="n" maxlength="9" value="" id="input85" onkeyup="keypressed(event , 8 , 5 , false)" onblur="lostfocus(8 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td86">
-        <p class="c"><input class="n" maxlength="9" value="" id="input86" onkeyup="keypressed(event , 8 , 6 , false)" onblur="lostfocus(8 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td87">
-        <p class="c"><input class="n" maxlength="9" value="" id="input87" onkeyup="keypressed(event , 8 , 7 , false)" onblur="lostfocus(8 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td88">
-        <p class="c"><input class="n" maxlength="9" value="" id="input88" onkeyup="keypressed(event , 8 , 8 , false)" onblur="lostfocus(8 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td89">
-        <p class="c"><input class="n" maxlength="9" value="" id="input89" onkeyup="keypressed(event , 8 , 9 , false)" onblur="lostfocus(8 , 9)"></p>
-    </td>
-
-</tr>
-
-<tr>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td91">
-        <p class="c"><input class="n" maxlength="9" value="" id="input91" onkeyup="keypressed(event , 9 , 1 , false)" onblur="lostfocus(9 , 1)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td92">
-        <p class="c"><input class="n" maxlength="9" value="" id="input92" onkeyup="keypressed(event , 9 , 2 , false)" onblur="lostfocus(9 , 2)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td93">
-        <p class="c"><input class="n" maxlength="9" value="" id="input93" onkeyup="keypressed(event , 9 , 3 , false)" onblur="lostfocus(9 , 3)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td94">
-        <p class="c"><input class="n" maxlength="9" value="" id="input94" onkeyup="keypressed(event , 9 , 4 , false)" onblur="lostfocus(9 , 4)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td95">
-        <p class="c"><input class="n" maxlength="9" value="" id="input95" onkeyup="keypressed(event , 9 , 5 , false)" onblur="lostfocus(9 , 5)"></p>
-    </td>
-
-    <td width="46" height="46" class="sright" style="background-color: rgb(255, 255, 255);" id="td96">
-        <p class="c"><input class="n" maxlength="9" value="" id="input96" onkeyup="keypressed(event , 9 , 6 , false)" onblur="lostfocus(9 , 6)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td97">
-        <p class="c"><input class="n" maxlength="9" value="" id="input97" onkeyup="keypressed(event , 9 , 7 , false)" onblur="lostfocus(9 , 7)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td98">
-        <p class="c"><input class="n" maxlength="9" value="" id="input98" onkeyup="keypressed(event , 9 , 8 , false)" onblur="lostfocus(9 , 8)"></p>
-    </td>
-
-    <td width="46" height="46" class="s" style="background-color: rgb(255, 255, 255);" id="td99">
-        <p class="c"><input class="n" maxlength="9" value="" id="input99" onkeyup="keypressed(event , 9 , 9 , false)" onblur="lostfocus(9 , 9)"></p>
-    </td>
-
-</tr>
-
-</tbody></table>
-
-<p class="c">
-    <a href="http://www.brainbashers.com/sudokuhelp.asp" class="ignore" target="_blank"><img src="./sudoku_files/help.gif" alt="Help" border="0" class="ph2"></a>
-    <a href="" class="ignore" onclick="resetgrid();return false;"><img src="./sudoku_files/restart.gif" alt="Restart" border="0" class="ph2"></a>
-    <br>
-    <a href="" onclick="saveboard(&#39;Y&#39;);return false;" class="ignore"><img src="./sudoku_files/save.gif" border="0" alt="Save Sudoku" class="ph2"></a>
-    <a href="" onclick="loadboard(getCookie('sudokuboard'), 'o');return false;" class="ignore"><img src="./sudoku_files/load.gif" border="0" class="ph2" alt="Load Sudoku"></a>
-</p>
-</td>
-<!-- the helper methods on the right side of the board -->
-<td width="*">
-    <p><input type="checkbox" id="autopencil" onclick="pencilmany();dsInit()"> Auto pencil marks&nbsp;<a href="" onclick="undo();return false;"><img src="./sudoku_files/undosml.gif" border="0" align="absbottom" alt="Undo"></a></p>
-    <p><input type="checkbox" id="showsinglecandidates" onclick="callsinglecandidates()"> Show a pinned square</p>
-    <p><input type="checkbox" id="showintersection" onclick="dsFindIntersections()"> Show Intersections</p>
-    <p><input type="checkbox" id="showlocked" onclick="dsFindLockedSets()"> Show Locked Sets</p>
-    <p><input type="checkbox" id="showxwing" onclick="dsFindXWing()"> Show X-Wing</p>
-    <p><input type="checkbox" id="showxywing" onclick="dsFindXYWing()"> Show XY-Wing</p>
-    <p><input type="checkbox" id="showxyzwing" onclick="dsFindXYZWing()"> Show XYZ-Wing</p>
-    <p><select id="showall" onchange="showallchange();">
-        <option value="0" selected="">Show squares with a...</option>
-        <option value="1">1</option>
-        <option value="2">.2</option>
-        <option value="3">...3</option>
-        <option value="4">....4</option>
-        <option value="5">.....5</option>
-        <option value="6">......6</option>
-        <option value="7">.......7</option>
-        <option value="8">........8</option>
-        <option value="9">.........9</option>
-        <option value="0"></option>
-        <option value="0">Clear...</option>
-        <option value="0"></option>
-    </select></p>
-
-    <p><input type="checkbox" id="showwrong" onclick="checkgrid(0,0,true,&#39;&#39;)"> Show errors in red</p>
-
-    <p><input type="checkbox" id="colourgrid" onclick="checkgrid(0,0,true,&#39;&#39;);"> Show duplicates</p>
-    <p><input type="checkbox" checked id="changecolour" onclick="changecolours();"> Alternative highlights</p>
-    <p><input type="checkbox" id="warnpage"> Warn when leaving page</p>
-    <p><b>Pencil Marks:</b><br>Simply enter multiple digits.</p>
-    <div id="showclock"><div id="clockinfo" style="float:left;" class="sb">Time Taken: 5:07</div><div style="float:left; margin-left:5px;"><a href="http://www.brainbashers.com/showsudoku.asp#" class="sg" onclick="hideclock(); return false;">[Hide]</a></div>&nbsp;</div>
-    <div id="hideclock" style="display:none;"><a href="http://www.brainbashers.com/showsudoku.asp#" class="sg" onclick="unhideclock(); return false;">[Show Clock]</a>&nbsp;</div>
-    <br><div id="showtext" class="sb">No pinned squares found.</div>
-</td>
-</tr>
-</tbody></table>
-<br><br>
-
-<br><img src="./sudoku_files/sp.gif" width="1" height="10">
-
-<p>When your <u>cursor is on the Sudoku grid</u>, you can navigate in the following way:</p>
-<blockquote>
-    <ul>
-        <li><b>Ctrl + Arrows</b><br>&nbsp;&nbsp;Move around the grid
-        </li><li><b>a</b><br>&nbsp;&nbsp;Auto pencil marks
-    </li><li><b>p</b><br>&nbsp;&nbsp;Show a pinned square
-    </li><li><b>Shift + #</b><br>&nbsp;&nbsp;Show squares with a &lt;#&gt;
-    </li></ul>
-    <p class="sg">Note: not all options work on all browsers. The key choices may seem unusual, but the navigation has to avoid key presses that are reserved for the browser, for example we couldn't use CTRL+1 to highlight all squares that contain a &lt;1&gt; as this is opens the first window in Firefox, nor SHIFT+P as it is reserved for printing, etc. If you experience any problems, then please feel free to <a href="http://www.brainbashers.com/contactusbyemail.asp" class="sg" target="_blank" onclick="alert(&#39;This link will load in a new window so your current Sudoku is not lost.&#39;);return true;">contact us</a></p>
-</blockquote>
-
-<p>This Sudoku can be accessed directly using:<br>&nbsp;&nbsp;&nbsp;http://www.brainbashers.com/sudoku132049</p>
-<p>You can <a href="http://www.brainbashers.com/usesudoku.asp" target="_blank" onclick="alert(&#39;This link will load in a new window so your current Sudoku is not lost.&#39;);return true;">freely use this BrainBashers Sudoku</a> image directly using:<br>&nbsp;&nbsp;&nbsp;http://www.brainbashers.com/sudokuimage132049
-</p><p>Comprehensive <a href="http://www.brainbashers.com/sudokuhelp.asp" target="_blank" onclick="alert(&#39;This link will load in a new window so your current Sudoku is not lost.&#39;);return true;">Sudoku help</a> is available if required. BrainBashers Daily Sudoku is available as an <a href="http://www.brainbashers.com/rss.asp" target="_blank" onclick="alert(&#39;This link will load in a new window so your current Sudoku is not lost.&#39;);return true;">RSS feed</a> and as part of the <a href="http://www.brainbashers.com/dailygubbins.asp" target="_blank" onclick="alert(&#39;This link will load in a new window so your current Sudoku is not lost.&#39;);return true;">Daily Gubbins</a>.</p>
-</form>
-
-
-
-
-
-<script language="JavaScript" type="text/javascript">
-    <!--
-    // set initial vars
-    lnsize = 9;
-    loobject = getObject('ca');
-    if (loobject==null)
-    {
-        alert('It would appear that your browser isn\'t configured to run the interactive version of Sudoku.');
-    }
-    lca = document.getElementById('ca').value;
-    lcqinitial = document.getElementById('cqbb').value;
-
-
-    var lacolours = new Array(10);
-    for (var i = 0; i < 10; i++) {
-        lacolours[i] = new Array(10);
-        for (var j = 0; j < 10; j++) {
-            lacolours[i][j] = "";
-        }
-    }
-
-    var lnstart;
-
-    function loaded()
-    {
-        // set focus to top left
-        loinput = document.getElementById('input11');
-        loinput.focus();
-
-        // store colours of the background cells - so we can reinstate them later
-        for (lnrowcounter = 1; lnrowcounter <= lnsize; lnrowcounter++)
-        {
-            for (lncolcounter = 1; lncolcounter <= lnsize; lncolcounter++)
-            {
-                latd = document.getElementById('td' + lnrowcounter + lncolcounter);
-                lacolours[lnrowcounter][lncolcounter] = latd.style.backgroundColor;
-
-                // set initial class (IE10 fix mod)
-                loinput = document.getElementById('input' + lnrowcounter + lncolcounter);
-                if (loinput.value.length > 1)
-                {
-                    loinput.className = 's';
-                    lctempvalue = loinput.value;
-                    loinput.value = "    ";
-                    loinput.value = lctempvalue;
-                }
-                else
-                {
-                    loinput.className = 'n';
-                }
-
-
-            }
-        }
-
-        checkgrid(0,0,true,'');
-        storechange();
-
-        startclock();
-    }
-    -->
-</script>
-
-
-<p>&nbsp;</p>
-</td>
-
-</tr></tbody></table>
-
-
-</td></tr>
-
-
-
-</tbody></table>
-
-
-
-</body></html>
+    <tbody>
+    <tr>
+        <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td colspan="2"><img src="sudoku_files/img/sp.gif" width="1" height="25" alt="Spacer"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><img src="sudoku_files/img/line2.gif" width="100%" height="8" alt="Line"></td>
+                </tr>
+                <tr valign="top">
+                    <td>
+                        <div class="navig">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="navigr"><a href="http://www.brainbashers.com/support.asp" class="navig"
+                                               title="Support BrainBashers">Support BrainBashers</a>&nbsp;|&nbsp;<a
+                                href="http://www.brainbashers.com/search.asp" class="navig">Search</a>&nbsp;|&nbsp;<a
+                                href="http://www.brainbashers.com/random.asp" class="navig">Random</a>&nbsp;|&nbsp;<a
+                                href="http://www.brainbashers.com/new.asp" class="navig">New</a>&nbsp;|&nbsp;<a
+                                href="http://www.brainbashers.com/today.asp" class="navig">Today</a>
+                            &nbsp;|&nbsp;<a href="http://www.brainbashers.com/userlogin.asp" class="navig">Log In</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><img src="sudoku_files/img/line2.gif" width="100%" height="8" alt="Line"></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr valign="top">
+                    <td>
+
+                        <link rel="stylesheet" href="./sudoku_files/sudoku20131112a.css" type="text/css">
+                        <span class="b2heading">BrainBashers Daily Sudoku<br><img src="sudoku_files/img/line2.gif"
+                                                                                  width="350" height="8" alt=""></span>
+                        <p></p>
+                        <p>Solve a random <a href="http://www.brainbashers.com/randomjapanese.asp?diff=1">Easy</a>, <a
+                                href="http://www.brainbashers.com/randomjapanese.asp?diff=2">Medium</a>, <a
+                                href="http://www.brainbashers.com/randomjapanese.asp?diff=3">Hard</a> Japanese logic
+                            puzzle chosen from today's collection.<br><span class="ssb">Note: If the puzzle doesn't look as it should try using 'Compatibility Mode'.</span>
+                        </p>
+                        <script language="javascript" type="text/javascript">
+                            <!--
+                            lcshowerrorwarningshown = "N";
+
+                            // warn them about pressing backspace?
+                            window.onbeforeunload = function () {
+                                lowarnpage = getObject('warnpage')
+
+                                if (lowarnpage.checked == true) {
+                                    return "";
+                                }
+                            }
+                            -->
+                        </script>
+                        <script language="javascript" src="./sudoku_files/showsudokuwithcomments.js"
+                                type="text/javascript"></script>
+                        <script language="javascript" src="./sudoku_files/helper.js" type="text/javascript"></script>
+                        <form>
+                            <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                                <tbody>
+                                <tr>
+                                    <td colspan=2 style="text-align: center;vertical-align: middle">
+                                        <input size="81" type="text" id="cqbb"
+                                               value=".8.4.2.3.1...9...7...713...4.8...7.3.75...29.6.9...4.8...276...2...8...5.6.1.5.7.">
+                                        <a href=""
+                                           onclick="lcq=document.getElementById('cqbb').value;loadboard(lcq, '.');loaded();return false;"
+                                           class="ignore"><img src="sudoku_files/img/import.gif" border="0" class="ph2"
+                                                               alt="Load From Input"></a>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td width="5"><img src="sudoku_files/img/sp.gif" width="5" height="1" alt="?"></td>
+                                    <!-- sudoku board -->
+                                    <td valign="top" width="500">
+
+                                        <input type="hidden" id="ca" value="answer">
+
+                                        <table class="sudokutable" border="1" cellpadding="0" cellspacing="0"
+                                               name="sudoku" align="center">
+
+                                            <tbody>
+                                            <tr>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td11">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input11"
+                                                                        onkeyup="keypressed(event , 1 , 1 , false)"
+                                                                        onblur="lostfocus(1 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td12">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input12"
+                                                                        onkeyup="keypressed(event , 1 , 2 , false)"
+                                                                        onblur="lostfocus(1 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td13">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input13"
+                                                                        onkeyup="keypressed(event , 1 , 3 , false)"
+                                                                        onblur="lostfocus(1 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td14">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input14"
+                                                                        onkeyup="keypressed(event , 1 , 4 , false)"
+                                                                        onblur="lostfocus(1 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td15">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input15"
+                                                                        onkeyup="keypressed(event , 1 , 5 , false)"
+                                                                        onblur="lostfocus(1 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td16">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input16"
+                                                                        onkeyup="keypressed(event , 1 , 6 , false)"
+                                                                        onblur="lostfocus(1 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td17">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input17"
+                                                                        onkeyup="keypressed(event , 1 , 7 , false)"
+                                                                        onblur="lostfocus(1 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td18">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input18"
+                                                                        onkeyup="keypressed(event , 1 , 8 , false)"
+                                                                        onblur="lostfocus(1 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td19">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input19"
+                                                                        onkeyup="keypressed(event , 1 , 9 , false)"
+                                                                        onblur="lostfocus(1 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td21">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input21"
+                                                                        onkeyup="keypressed(event , 2 , 1 , false)"
+                                                                        onblur="lostfocus(2 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td22">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input22"
+                                                                        onkeyup="keypressed(event , 2 , 2 , false)"
+                                                                        onblur="lostfocus(2 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td23">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input23"
+                                                                        onkeyup="keypressed(event , 2 , 3 , false)"
+                                                                        onblur="lostfocus(2 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td24">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input24"
+                                                                        onkeyup="keypressed(event , 2 , 4 , false)"
+                                                                        onblur="lostfocus(2 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td25">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input25"
+                                                                        onkeyup="keypressed(event , 2 , 5 , false)"
+                                                                        onblur="lostfocus(2 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td26">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input26"
+                                                                        onkeyup="keypressed(event , 2 , 6 , false)"
+                                                                        onblur="lostfocus(2 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td27">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input27"
+                                                                        onkeyup="keypressed(event , 2 , 7 , false)"
+                                                                        onblur="lostfocus(2 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td28">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input28"
+                                                                        onkeyup="keypressed(event , 2 , 8 , false)"
+                                                                        onblur="lostfocus(2 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td29">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input29"
+                                                                        onkeyup="keypressed(event , 2 , 9 , false)"
+                                                                        onblur="lostfocus(2 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td31">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input31"
+                                                                        onkeyup="keypressed(event , 3 , 1 , false)"
+                                                                        onblur="lostfocus(3 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td32">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input32"
+                                                                        onkeyup="keypressed(event , 3 , 2 , false)"
+                                                                        onblur="lostfocus(3 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td33">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input33"
+                                                                        onkeyup="keypressed(event , 3 , 3 , false)"
+                                                                        onblur="lostfocus(3 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td34">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input34"
+                                                                        onkeyup="keypressed(event , 3 , 4 , false)"
+                                                                        onblur="lostfocus(3 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td35">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input35"
+                                                                        onkeyup="keypressed(event , 3 , 5 , false)"
+                                                                        onblur="lostfocus(3 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td36">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input36"
+                                                                        onkeyup="keypressed(event , 3 , 6 , false)"
+                                                                        onblur="lostfocus(3 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td37">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input37"
+                                                                        onkeyup="keypressed(event , 3 , 7 , false)"
+                                                                        onblur="lostfocus(3 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td38">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input38"
+                                                                        onkeyup="keypressed(event , 3 , 8 , false)"
+                                                                        onblur="lostfocus(3 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td39">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input39"
+                                                                        onkeyup="keypressed(event , 3 , 9 , false)"
+                                                                        onblur="lostfocus(3 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td41">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input41"
+                                                                        onkeyup="keypressed(event , 4 , 1 , false)"
+                                                                        onblur="lostfocus(4 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td42">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input42"
+                                                                        onkeyup="keypressed(event , 4 , 2 , false)"
+                                                                        onblur="lostfocus(4 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stopright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td43">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input43"
+                                                                        onkeyup="keypressed(event , 4 , 3 , false)"
+                                                                        onblur="lostfocus(4 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td44">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input44"
+                                                                        onkeyup="keypressed(event , 4 , 4 , false)"
+                                                                        onblur="lostfocus(4 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td45">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input45"
+                                                                        onkeyup="keypressed(event , 4 , 5 , false)"
+                                                                        onblur="lostfocus(4 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stopright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td46">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input46"
+                                                                        onkeyup="keypressed(event , 4 , 6 , false)"
+                                                                        onblur="lostfocus(4 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td47">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input47"
+                                                                        onkeyup="keypressed(event , 4 , 7 , false)"
+                                                                        onblur="lostfocus(4 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td48">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input48"
+                                                                        onkeyup="keypressed(event , 4 , 8 , false)"
+                                                                        onblur="lostfocus(4 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td49">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input49"
+                                                                        onkeyup="keypressed(event , 4 , 9 , false)"
+                                                                        onblur="lostfocus(4 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td51">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input51"
+                                                                        onkeyup="keypressed(event , 5 , 1 , false)"
+                                                                        onblur="lostfocus(5 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td52">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input52"
+                                                                        onkeyup="keypressed(event , 5 , 2 , false)"
+                                                                        onblur="lostfocus(5 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td53">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input53"
+                                                                        onkeyup="keypressed(event , 5 , 3 , false)"
+                                                                        onblur="lostfocus(5 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td54">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input54"
+                                                                        onkeyup="keypressed(event , 5 , 4 , false)"
+                                                                        onblur="lostfocus(5 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td55">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input55"
+                                                                        onkeyup="keypressed(event , 5 , 5 , false)"
+                                                                        onblur="lostfocus(5 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td56">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input56"
+                                                                        onkeyup="keypressed(event , 5 , 6 , false)"
+                                                                        onblur="lostfocus(5 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td57">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input57"
+                                                                        onkeyup="keypressed(event , 5 , 7 , false)"
+                                                                        onblur="lostfocus(5 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td58">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input58"
+                                                                        onkeyup="keypressed(event , 5 , 8 , false)"
+                                                                        onblur="lostfocus(5 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td59">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input59"
+                                                                        onkeyup="keypressed(event , 5 , 9 , false)"
+                                                                        onblur="lostfocus(5 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td61">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input61"
+                                                                        onkeyup="keypressed(event , 6 , 1 , false)"
+                                                                        onblur="lostfocus(6 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td62">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input62"
+                                                                        onkeyup="keypressed(event , 6 , 2 , false)"
+                                                                        onblur="lostfocus(6 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td63">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input63"
+                                                                        onkeyup="keypressed(event , 6 , 3 , false)"
+                                                                        onblur="lostfocus(6 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td64">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input64"
+                                                                        onkeyup="keypressed(event , 6 , 4 , false)"
+                                                                        onblur="lostfocus(6 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td65">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input65"
+                                                                        onkeyup="keypressed(event , 6 , 5 , false)"
+                                                                        onblur="lostfocus(6 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td66">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input66"
+                                                                        onkeyup="keypressed(event , 6 , 6 , false)"
+                                                                        onblur="lostfocus(6 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td67">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input67"
+                                                                        onkeyup="keypressed(event , 6 , 7 , false)"
+                                                                        onblur="lostfocus(6 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td68">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input68"
+                                                                        onkeyup="keypressed(event , 6 , 8 , false)"
+                                                                        onblur="lostfocus(6 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td69">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input69"
+                                                                        onkeyup="keypressed(event , 6 , 9 , false)"
+                                                                        onblur="lostfocus(6 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td71">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input71"
+                                                                        onkeyup="keypressed(event , 7 , 1 , false)"
+                                                                        onblur="lostfocus(7 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td72">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input72"
+                                                                        onkeyup="keypressed(event , 7 , 2 , false)"
+                                                                        onblur="lostfocus(7 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stopright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td73">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input73"
+                                                                        onkeyup="keypressed(event , 7 , 3 , false)"
+                                                                        onblur="lostfocus(7 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td74">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input74"
+                                                                        onkeyup="keypressed(event , 7 , 4 , false)"
+                                                                        onblur="lostfocus(7 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td75">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input75"
+                                                                        onkeyup="keypressed(event , 7 , 5 , false)"
+                                                                        onblur="lostfocus(7 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stopright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td76">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input76"
+                                                                        onkeyup="keypressed(event , 7 , 6 , false)"
+                                                                        onblur="lostfocus(7 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td77">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input77"
+                                                                        onkeyup="keypressed(event , 7 , 7 , false)"
+                                                                        onblur="lostfocus(7 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td78">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input78"
+                                                                        onkeyup="keypressed(event , 7 , 8 , false)"
+                                                                        onblur="lostfocus(7 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="stop"
+                                                    style="background-color: rgb(255, 255, 255);" id="td79">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input79"
+                                                                        onkeyup="keypressed(event , 7 , 9 , false)"
+                                                                        onblur="lostfocus(7 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td81">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input81"
+                                                                        onkeyup="keypressed(event , 8 , 1 , false)"
+                                                                        onblur="lostfocus(8 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td82">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input82"
+                                                                        onkeyup="keypressed(event , 8 , 2 , false)"
+                                                                        onblur="lostfocus(8 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td83">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input83"
+                                                                        onkeyup="keypressed(event , 8 , 3 , false)"
+                                                                        onblur="lostfocus(8 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td84">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input84"
+                                                                        onkeyup="keypressed(event , 8 , 4 , false)"
+                                                                        onblur="lostfocus(8 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td85">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input85"
+                                                                        onkeyup="keypressed(event , 8 , 5 , false)"
+                                                                        onblur="lostfocus(8 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td86">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input86"
+                                                                        onkeyup="keypressed(event , 8 , 6 , false)"
+                                                                        onblur="lostfocus(8 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td87">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input87"
+                                                                        onkeyup="keypressed(event , 8 , 7 , false)"
+                                                                        onblur="lostfocus(8 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td88">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input88"
+                                                                        onkeyup="keypressed(event , 8 , 8 , false)"
+                                                                        onblur="lostfocus(8 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td89">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input89"
+                                                                        onkeyup="keypressed(event , 8 , 9 , false)"
+                                                                        onblur="lostfocus(8 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td91">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input91"
+                                                                        onkeyup="keypressed(event , 9 , 1 , false)"
+                                                                        onblur="lostfocus(9 , 1)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td92">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input92"
+                                                                        onkeyup="keypressed(event , 9 , 2 , false)"
+                                                                        onblur="lostfocus(9 , 2)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td93">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input93"
+                                                                        onkeyup="keypressed(event , 9 , 3 , false)"
+                                                                        onblur="lostfocus(9 , 3)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td94">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input94"
+                                                                        onkeyup="keypressed(event , 9 , 4 , false)"
+                                                                        onblur="lostfocus(9 , 4)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td95">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input95"
+                                                                        onkeyup="keypressed(event , 9 , 5 , false)"
+                                                                        onblur="lostfocus(9 , 5)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="sright"
+                                                    style="background-color: rgb(255, 255, 255);" id="td96">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input96"
+                                                                        onkeyup="keypressed(event , 9 , 6 , false)"
+                                                                        onblur="lostfocus(9 , 6)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td97">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input97"
+                                                                        onkeyup="keypressed(event , 9 , 7 , false)"
+                                                                        onblur="lostfocus(9 , 7)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td98">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input98"
+                                                                        onkeyup="keypressed(event , 9 , 8 , false)"
+                                                                        onblur="lostfocus(9 , 8)"></p>
+                                                </td>
+
+                                                <td width="46" height="46" class="s"
+                                                    style="background-color: rgb(255, 255, 255);" id="td99">
+                                                    <p class="c"><input class="n" maxlength="9" value="" id="input99"
+                                                                        onkeyup="keypressed(event , 9 , 9 , false)"
+                                                                        onblur="lostfocus(9 , 9)"></p>
+                                                </td>
+
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                        <p class="c">
+                                            <a href="http://www.brainbashers.com/sudokuhelp.asp" class="ignore"
+                                               target="_blank"><img src="sudoku_files/img/help.gif" alt="Help" border="0"
+                                                                    class="ph2"></a>
+                                            <a style="display: none" href="" class="ignore" onclick="resetgrid();return false;"><img
+                                                    src="sudoku_files/img/restart.gif" alt="Restart" border="0"
+                                                    class="ph2"></a>
+                                            <br>
+                                            <a style="display: none" href="" onclick="saveboard('Y');return false;"
+                                               class="ignore"><img src="sudoku_files/img/save.gif" border="0"
+                                                                   alt="Save Sudoku" class="ph2"></a>
+                                            <a style="display: none" href="" onclick="loadboard(getCookie('sudokuboard'), 'o');return false;"
+                                               class="ignore"><img src="sudoku_files/img/load.gif" border="0" class="ph2"
+                                                                   alt="Load Sudoku"></a>
+                                        </p>
+                                    </td>
+                                    <!-- the helper methods on the right side of the board -->
+                                    <td width="*">
+                                        <p><input type="checkbox" id="autopencil" onclick="pencilmany();dsInit()"> Auto
+                                            pencil marks&nbsp;<a href="" onclick="undo();return false;"><img
+                                                    src="sudoku_files/img/undosml.gif" border="0" align="absbottom"
+                                                    alt="Undo"></a></p>
+                                        <p><input type="checkbox" id="showsinglecandidates"
+                                                  onclick="callsinglecandidates()"> Show a pinned square</p>
+                                        <p><input type="checkbox" id="showintersection" onclick="dsFindIntersections()">
+                                            Show Intersections</p>
+                                        <p><input type="checkbox" id="showlocked" onclick="dsFindLockedSets()"> Show
+                                            Locked Sets</p>
+                                        <p><input type="checkbox" id="showxwing" onclick="dsFindXWing()"> Show X-Wing
+                                        </p>
+                                        <p><input type="checkbox" id="showxywing" onclick="dsFindXYWing()"> Show XY-Wing
+                                        </p>
+                                        <p><input type="checkbox" id="showxyzwing" onclick="dsFindXYZWing()"> Show
+                                            XYZ-Wing</p>
+                                        <p><select id="showall" onchange="showallchange();">
+                                            <option value="0" selected="">Show squares with a...</option>
+                                            <option value="1">1</option>
+                                            <option value="2">.2</option>
+                                            <option value="3">...3</option>
+                                            <option value="4">....4</option>
+                                            <option value="5">.....5</option>
+                                            <option value="6">......6</option>
+                                            <option value="7">.......7</option>
+                                            <option value="8">........8</option>
+                                            <option value="9">.........9</option>
+                                            <option value="0"></option>
+                                            <option value="0">Clear...</option>
+                                            <option value="0"></option>
+                                        </select></p>
+
+                                        <p style="display: none"><input type="checkbox" id="showwrong"
+                                                  onclick="checkgrid(0,0,true,'')"> Show errors in red</p>
+
+                                        <p><input type="checkbox" id="colourgrid"
+                                                  onclick="checkgrid(0,0,true,'');"> Show duplicates</p>
+                                        <p><input type="checkbox" checked id="changecolour" onclick="changecolours();">
+                                            Alternative highlights</p>
+                                        <p style="display: none"><input type="checkbox" id="warnpage"> Warn when leaving page</p>
+                                        <p><b>Pencil Marks:</b><br>Simply enter multiple digits.</p>
+                                        <div id="showclock">
+                                            <div id="clockinfo" style="float:left;" class="sb">Time Taken: 5:07</div>
+                                            <div style="float:left; margin-left:5px;"><a
+                                                    href="http://www.brainbashers.com/showsudoku.asp#" class="sg"
+                                                    onclick="hideclock(); return false;">[Hide]</a></div>&nbsp;
+                                        </div>
+                                        <div id="hideclock" style="display:none;"><a
+                                                href="http://www.brainbashers.com/showsudoku.asp#" class="sg"
+                                                onclick="unhideclock(); return false;">[Show Clock]</a>&nbsp;
+                                        </div>
+                                        <br>
+                                        <div id="showtext" class="sb">No pinned squares found.</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <br><br>
+
+                            <br><img src="sudoku_files/img/sp.gif" width="1" height="10">
+
+                            <p>When your <u>cursor is on the Sudoku grid</u>, you can navigate in the following way:</p>
+                            <blockquote>
+                                <ul>
+                                    <li><b>Ctrl + Arrows</b><br>&nbsp;&nbsp;Move around the grid
+                                    </li>
+                                    <li><b>a</b><br>&nbsp;&nbsp;Auto pencil marks
+                                    </li>
+                                    <li><b>p</b><br>&nbsp;&nbsp;Show a pinned square
+                                    </li>
+                                    <li><b>Shift + #</b><br>&nbsp;&nbsp;Show squares with a &lt;#&gt;
+                                    </li>
+                                </ul>
+                                <p class="sg">Note: not all options work on all browsers. The key choices may seem
+                                    unusual, but the navigation has to avoid key presses that are reserved for the
+                                    browser, for example we couldn't use CTRL+1 to highlight all squares that contain a
+                                    &lt;1&gt; as this is opens the first window in Firefox, nor SHIFT+P as it is
+                                    reserved for printing, etc. If you experience any problems, then please feel free to
+                                    <a href="http://www.brainbashers.com/contactusbyemail.asp" class="sg"
+                                       target="_blank"
+                                       onclick="alert('This link will load in a new window so your current Sudoku is not lost.');return true;">contact
+                                        us</a></p>
+                            </blockquote>
+
+                            <p>This Sudoku can be accessed directly using:<br>&nbsp;&nbsp;&nbsp;http://www.brainbashers.com/sudoku132049
+                            </p>
+                            <p>You can <a href="http://www.brainbashers.com/usesudoku.asp" target="_blank"
+                                          onclick="alert('This link will load in a new window so your current Sudoku is not lost.');return true;">freely
+                                use this BrainBashers Sudoku</a> image directly using:<br>&nbsp;&nbsp;&nbsp;http://www.brainbashers.com/sudokuimage132049
+                            </p>
+                            <p>Comprehensive <a href="http://www.brainbashers.com/sudokuhelp.asp" target="_blank"
+                                                onclick="alert('This link will load in a new window so your current Sudoku is not lost.');return true;">Sudoku
+                                help</a> is available if required. BrainBashers Daily Sudoku is available as an <a
+                                    href="http://www.brainbashers.com/rss.asp" target="_blank"
+                                    onclick="alert('This link will load in a new window so your current Sudoku is not lost.');return true;">RSS
+                                feed</a> and as part of the <a href="http://www.brainbashers.com/dailygubbins.asp"
+                                                               target="_blank"
+                                                               onclick="alert('This link will load in a new window so your current Sudoku is not lost.');return true;">Daily
+                                Gubbins</a>.</p>
+                        </form>
+
+
+                        <script language="JavaScript" type="text/javascript">
+                            <!--
+                            // set initial vars
+                            lnsize = 9;
+                            loobject = getObject('ca');
+                            if (loobject == null) {
+                                alert('It would appear that your browser isn\'t configured to run the interactive version of Sudoku.');
+                            }
+                            lca = document.getElementById('ca').value;
+                            lcqinitial = document.getElementById('cqbb').value;
+
+
+                            var lacolours = new Array(10);
+                            for (var i = 0; i < 10; i++) {
+                                lacolours[i] = new Array(10);
+                                for (var j = 0; j < 10; j++) {
+                                    lacolours[i][j] = "";
+                                }
+                            }
+
+                            var lnstart;
+
+                            function loaded() {
+                                // set focus to top left
+                                loinput = document.getElementById('input11');
+                                loinput.focus();
+
+                                // store colours of the background cells - so we can reinstate them later
+                                for (lnrowcounter = 1; lnrowcounter <= lnsize; lnrowcounter++) {
+                                    for (lncolcounter = 1; lncolcounter <= lnsize; lncolcounter++) {
+                                        latd = document.getElementById('td' + lnrowcounter + lncolcounter);
+                                        lacolours[lnrowcounter][lncolcounter] = latd.style.backgroundColor;
+
+                                        // set initial class (IE10 fix mod)
+                                        loinput = document.getElementById('input' + lnrowcounter + lncolcounter);
+                                        if (loinput.value.length > 1) {
+                                            loinput.className = 's';
+                                            lctempvalue = loinput.value;
+                                            loinput.value = "    ";
+                                            loinput.value = lctempvalue;
+                                        } else {
+                                            loinput.className = 'n';
+                                        }
+
+
+                                    }
+                                }
+
+                                checkgrid(0, 0, true, '');
+                                storechange();
+
+                                startclock();
+                            }
+
+                            -->
+                        </script>
+
+
+                        <p>&nbsp;</p>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+
+        </td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+
+</body>
+</html>
