@@ -4,52 +4,18 @@
 
 var checkIt;
 
-function IsNumeric(sText)
-{
-    var ValidChars = "0123456789.";
-    var IsNumber=true;
-    var Char;
-
-    for (i = 0; i < sText.length && IsNumber == true; i++)
-    {
-        Char = sText.charAt(i);
-        if (ValidChars.indexOf(Char) == -1)
-        {
-            IsNumber = false;
-        }
-    }
-    return IsNumber;
+function isNumeric(sText) {
+  const validChars = /^[0-9.]+$/;
+  return validChars.test(sText);
 }
 
-function trim(s)
-{
-    while (s.substring(0,1) == ' ')
-    {
-        s = s.substring(1,s.length);
-    }
-    while (s.substring(s.length-1,s.length) == ' ')
-    {
-        s = s.substring(0,s.length-1);
-    }
-    return s;
+
+function trim(s) {
+    return s.trim();
 }
 
-function getObject(loobject)
-{
-    if (document.getElementById)
-    {
-        loobject = document.getElementById(loobject);
-    }
-    else if (document.all)
-    {
-        loobject = document.all.item(loobject);
-    }
-    else
-    {
-        loobject = null;
-    }
-
-    return loobject;
+function getObject(loobject) {
+    return document.getElementById(loobject) || null;
 }
 
 // moves BBobjdiv on index.asp
