@@ -8,6 +8,9 @@ function dsChangeCellBGColor(row, col)
 }
 
 /**
+ * This JavaScript function extends the functionality of the Array prototype by adding a new method called transpose. 
+ * This method is used to transpose a two-dimensional array. 
+ * Transposing a matrix means switching its rows with its columns, effectively flipping it along its main diagonal.
  * Transposes a given array.
  * @id Array.prototype.transpose
  * @author Shamasis Bhattacharya
